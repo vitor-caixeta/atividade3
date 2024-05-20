@@ -1,0 +1,131 @@
+/* variables */
+
+:root {
+    --MainColor: #E01C6A;
+    --MainColorDark: #a3154e;
+    --SecondColor: #401E58;
+    --SecondDark: #33104a;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background: linear-gradient(360deg, #5F1B8C 12%, #76399e 34.5%, #76399e 48.5%, #190E21 100%);
+    background-size: cover;
+    background-position: center;
+}    
+
+    /* animation nav links */
+
+    .nav-link {
+        position: relative;
+        text-decoration: none;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: white;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+        left: 0;
+        background: white;
+    }
+
+
+    /* btn`s */
+
+    .main-btn {
+        background-color: var(--MainColor);
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .main-btn:hover {
+        background-color: var(--MainColorDark);
+    }
+
+    .bg-secondDark {
+        background-color: var(--SecondDark);
+    }
+
+    .bg-secondNormal {
+        background-color: var(--SecondColor);
+    }
+
+    .bg-main {
+        background-color: var(--MainColor);
+    }
+
+    .border-main {
+        border-color: var(--MainColor);
+    }
+
+    /* hamburger */
+
+    .hamburger {
+        cursor: pointer;
+    }
+
+    .hamburger input {
+        display: none;
+    }
+
+    .hamburger svg {
+        /* The size of the SVG defines the overall size */
+        height: 3em;
+        /* Define the transition for transforming the SVG */
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line {
+        fill: none;
+        stroke: white;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        /* Define the transition for transforming the Stroke */
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line-top-bottom {
+        stroke-dasharray: 12 63;
+    }
+
+    .hamburger input:checked+svg {
+        transform: rotate(-45deg);
+    }
+
+    .hamburger input:checked+svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+    }
+
+    .btns {
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .btns {
+            transform: scale(0.6);
+        }
+    }
